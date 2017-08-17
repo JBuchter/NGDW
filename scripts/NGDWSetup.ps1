@@ -2,10 +2,10 @@ param(
   [Parameter(Mandatory=$true)]
   [string] $HostName
   [Parameter(Mandatory=$true)]
-  [string] $ChocoInstall
+  [string] $ChocoPackages
 )
 
-$command = ".\ChocolateyInstall.ps1" -ChocoInstall $ChocoInstall
+$command = ".\ChocolateyInstall.ps1" -chocoPackages $ChocoPackages
 Invoke-Expression $command
 
 $command = ".\ConfigureWinRM.ps1" -HostName $HostName
